@@ -5,217 +5,404 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bayeni - E-Commerce Solutions for Small Businesses</title>
     <link rel="stylesheet" href="styles.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <span class="peacock">🦚</span>
-                <h1>Bayeni</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#showcase">Showcase</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#cta" class="btn-primary">Get Started</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState, useEffect } = React;
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h2>Transform Your Business Online</h2>
-            <p>Bayeni empowers small businesses with professional e-commerce solutions that drive growth, sales, and customer engagement.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('cta').scrollIntoView({behavior: 'smooth'})">Start Your Journey</button>
-                <button class="btn btn-secondary" onclick="document.getElementById('showcase').scrollIntoView({behavior: 'smooth'})">See Our Work</button>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="peacock-icon">🦚</div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <h2>Why Choose Bayeni?</h2>
-            <div class="about-grid">
-                <div class="about-item">
-                    <h3>01</h3>
-                    <h4>Expert Marketing</h4>
-                    <p>We understand the challenges small businesses face in the digital marketplace. Our strategies are proven, tested, and results-driven.</p>
-                </div>
-                <div class="about-item">
-                    <h3>02</h3>
-                    <h4>Custom Solutions</h4>
-                    <p>Every business is unique. We create tailored e-commerce platforms that reflect your brand and capture your market.</p>
-                </div>
-                <div class="about-item">
-                    <h3>03</h3>
-                    <h4>Full Support</h4>
-                    <p>From launch to scale, we're with you every step. Technical support, marketing guidance, and continuous optimization included.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🛍️</div>
-                    <h3>E-Commerce Platform Setup</h3>
-                    <p>Custom website design and development with HTML5, CSS3, and modern JavaScript frameworks tailored to your needs.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>Mobile-First Design</h3>
-                    <p>Responsive websites that look perfect on all devices. Your customers shop anywhere, anytime.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>Brand Identity</h3>
-                    <p>Stunning visual design that captures your brand essence and creates lasting impressions with your audience.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Analytics & Optimization</h3>
-                    <p>Data-driven insights to track performance, understand customer behavior, and continuously improve results.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3>Marketing Strategy</h3>
-                    <p>Comprehensive digital marketing to drive traffic, increase conversions, and grow your revenue.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔒</div>
-                    <h3>Security & Performance</h3>
-                    <p>Fast-loading, secure platforms built to handle your growing customer base with confidence.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Showcase Section - EMPYRE Featured -->
-    <section id="showcase" class="showcase">
-        <div class="container">
-            <h2>Featured Success Story</h2>
-            <div class="showcase-content">
-                <div class="showcase-image">
-                    <div class="empyre-card">
-                        <div class="empyre-header">Case Study</div>
-                        <h3>Empyre</h3>
-                        <p class="subtitle">Writer's Portfolio & Digital Presence</p>
+        // Bayeni Logo Component
+        function BayeniLogo() {
+            return (
+                <div className="logo logo-animation">
+                    <svg className="logo-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        {/* Peacock Body */}
+                        <circle cx="100" cy="100" r="25" fill="#D4AF37"/>
+                        
+                        {/* Peacock Tail Feathers */}
+                        <g id="feathers">
+                            {/* Left Feathers */}
+                            <ellipse cx="70" cy="80" rx="15" ry="35" fill="#2D5F4F" transform="rotate(-30 70 80)"/>
+                            <ellipse cx="60" cy="100" rx="15" ry="35" fill="#2D5F4F" transform="rotate(-45 60 100)"/>
+                            <ellipse cx="65" cy="120" rx="15" ry="35" fill="#2D5F4F" transform="rotate(-60 65 120)"/>
+                            
+                            {/* Right Feathers */}
+                            <ellipse cx="130" cy="80" rx="15" ry="35" fill="#2D5F4F" transform="rotate(30 130 80)"/>
+                            <ellipse cx="140" cy="100" rx="15" ry="35" fill="#2D5F4F" transform="rotate(45 140 100)"/>
+                            <ellipse cx="135" cy="120" rx="15" ry="35" fill="#2D5F4F" transform="rotate(60 135 120)"/>
+                            
+                            {/* Top Feathers */}
+                            <ellipse cx="100" cy="60" rx="15" ry="35" fill="#0A5D5C" transform="rotate(0 100 60)"/>
+                        </g>
+                        
+                        {/* Eye Spots on Feathers */}
+                        <circle cx="70" cy="65" r="4" fill="#D4AF37"/>
+                        <circle cx="60" cy="85" r="4" fill="#D4AF37"/>
+                        <circle cx="65" cy="105" r="4" fill="#D4AF37"/>
+                        <circle cx="130" cy="65" r="4" fill="#D4AF37"/>
+                        <circle cx="140" cy="85" r="4" fill="#D4AF37"/>
+                        <circle cx="135" cy="105" r="4" fill="#D4AF37"/>
+                        
+                        {/* Head */}
+                        <circle cx="100" cy="95" r="8" fill="#0A5D5C"/>
+                    </svg>
+                    <div className="logo-text">
+                        <h1>Bayeni</h1>
+                        <p>Industries</p>
                     </div>
                 </div>
-                <div class="showcase-details">
-                    <h3>Elegant Writer's Platform</h3>
-                    <p>We transformed a vision into a sophisticated digital presence for <strong>Empyre</strong>, a writer's portfolio and online brand showcase.</p>
-                    
-                    <h4>The Challenge:</h4>
-                    <ul>
-                        <li>Create a memorable brand experience for a literary professional</li>
-                        <li>Showcase work in an elegant, aesthetically-pleasing design</li>
-                        <li>Build a platform that reflects sophistication and professionalism</li>
-                    </ul>
+            );
+        }
 
-                    <h4>Our Solution:</h4>
-                    <ul>
-                        <li>Custom HTML5 & CSS3 design with modern aesthetic</li>
-                        <li>Smooth JavaScript interactions and animations</li>
-                        <li>Fully responsive for all devices</li>
-                        <li>SEO-optimized for search visibility</li>
-                    </ul>
+        // Review Form Component
+        function ReviewSection() {
+            const [formData, setFormData] = useState({
+                name: '',
+                email: '',
+                rating: 0,
+                review: ''
+            });
+            const [submitted, setSubmitted] = useState(false);
+            const [reviews, setReviews] = useState([]);
 
-                    <h4>Results:</h4>
-                    <p>A stunning digital portfolio that captivates visitors and establishes Empyre as a professional in the literary space.</p>
+            useEffect(() => {
+                const saved = localStorage.getItem('bayeniReviews');
+                if (saved) setReviews(JSON.parse(saved));
+            }, []);
 
-                    <a href="https://github.com/uncongwane350-source/empyre-thandeka" class="btn btn-primary" target="_blank">View Empyre Repository →</a>
-                </div>
-            </div>
-        </div>
-    </section>
+            const handleRating = (rate) => {
+                setFormData({...formData, rating: rate});
+            };
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Bayeni transformed our online presence. Professional, creative, and delivered beyond expectations."</p>
-                    <h4>Sarah Mitchell</h4>
-                    <p class="client-role">Founder, Digital Boutique</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"The team understood our brand immediately and created something we're truly proud of. Highly recommended!"</p>
-                    <h4>James Okonkwo</h4>
-                    <p class="client-role">CEO, Sustainable Fashion Co.</p>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Not just a website—they built us a complete online business ecosystem. Support is outstanding."</p>
-                    <h4>Maya Patel</h4>
-                    <p class="client-role">Founder, Artisan Goods</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                if (formData.name && formData.email && formData.rating && formData.review) {
+                    const newReview = {
+                        ...formData,
+                        id: Date.now(),
+                        date: new Date().toLocaleDateString()
+                    };
+                    const updated = [newReview, ...reviews];
+                    setReviews(updated);
+                    localStorage.setItem('bayeniReviews', JSON.stringify(updated));
+                    setFormData({name: '', email: '', rating: 0, review: ''});
+                    setSubmitted(true);
+                    setTimeout(() => setSubmitted(false), 3000);
+                }
+            };
 
-    <!-- Call to Action Section -->
-    <section id="cta" class="cta">
-        <div class="container">
-            <h2>Ready to Grow Your Business?</h2>
-            <p>Let's create something extraordinary together. Get in touch and discover how Bayeni can transform your e-commerce vision into reality.</p>
-            <form class="contact-form" id="contactForm">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="text" placeholder="Business Name" required>
-                <textarea placeholder="Tell us about your project..." rows="5" required></textarea>
-                <button type="submit" class="btn btn-primary">Schedule a Consultation</button>
-            </form>
-            <p class="form-note" id="formMessage"></p>
-        </div>
-    </section>
+            return (
+                <section id="review" className="review-section">
+                    <div className="container">
+                        <h2>⭐ Thandeka's Review</h2>
+                        <p>Share your experience with Bayeni and help us improve</p>
+                        
+                        <div className="review-form">
+                            {submitted && (
+                                <div className="success-message">
+                                    ✓ Thank you for your review! We appreciate your feedback.
+                                </div>
+                            )}
+                            
+                            <form onSubmit={handleSubmit}>
+                                <div className="form-group">
+                                    <label>Your Name</label>
+                                    <input 
+                                        type="text" 
+                                        value={formData.name}
+                                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                        placeholder="Enter your name"
+                                        required
+                                    />
+                                </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Bayeni</h4>
-                    <p>Empowering small businesses with professional e-commerce solutions.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#showcase">Showcase</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#cta">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Featured Work</h4>
-                    <ul>
-                        <li><a href="https://github.com/uncongwane350-source/empyre-thandeka" target="_blank">Empyre</a></li>
-                        <li><a href="#">More Projects</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Bayeni. All rights reserved. | Small Business E-Commerce Solutions</p>
-            </div>
-        </div>
-    </footer>
+                                <div className="form-group">
+                                    <label>Email Address</label>
+                                    <input 
+                                        type="email" 
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                        placeholder="your@email.com"
+                                        required
+                                    />
+                                </div>
 
-    <script src="script.js"></script>
+                                <div className="form-group">
+                                    <label>Your Rating</label>
+                                    <div className="rating-group">
+                                        {[1, 2, 3, 4, 5].map(star => (
+                                            <button
+                                                key={star}
+                                                type="button"
+                                                className={`star-btn ${formData.rating >= star ? 'active' : ''}`}
+                                                onClick={() => handleRating(star)}
+                                            >
+                                                ⭐
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="form-group">
+                                    <label>Your Review</label>
+                                    <textarea 
+                                        value={formData.review}
+                                        onChange={(e) => setFormData({...formData, review: e.target.value})}
+                                        placeholder="Share your thoughts about Bayeni..."
+                                        rows="5"
+                                        required
+                                    ></textarea>
+                                </div>
+
+                                <button type="submit" className="submit-btn">Submit Review</button>
+                            </form>
+                        </div>
+
+                        {reviews.length > 0 && (
+                            <div style={{marginTop: '3rem'}}>
+                                <h3 style={{textAlign: 'center', marginBottom: '2rem', color: '#2D5F4F'}}>
+                                    Reviews from Our Community
+                                </h3>
+                                <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem'}}>
+                                    {reviews.map(review => (
+                                        <div key={review.id} className="testimonial-card" style={{border: 'none', borderTop: '4px solid #D4AF37'}}>
+                                            <div className="stars">
+                                                {Array(review.rating).fill('⭐').join('')}
+                                            </div>
+                                            <p style={{marginBottom: '1.5rem'}}>{review.review}</p>
+                                            <h4>{review.name}</h4>
+                                            <p className="client-role" style={{fontSize: '0.85rem'}}>{review.date}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </section>
+            );
+        }
+
+        // Main App Component
+        function BayeniApp() {
+            return (
+                <>
+                    {/* Navigation */}
+                    <nav className="navbar">
+                        <div className="container">
+                            <BayeniLogo />
+                            <ul className="nav-links">
+                                <li><a href="#hero">Home</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#showcase">Showcase</a></li>
+                                <li><a href="#testimonials">Testimonials</a></li>
+                                <li><a href="#review">Reviews</a></li>
+                                <li><a href="#cta" className="btn-primary">Get Started</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    {/* Hero Section */}
+                    <section id="hero" className="hero">
+                        <div className="hero-content">
+                            <h2>Transform Your Business Online</h2>
+                            <p>Bayeni empowers small businesses with professional e-commerce solutions that drive growth, sales, and customer engagement.</p>
+                            <div className="hero-buttons">
+                                <button className="btn btn-primary" onClick={() => document.getElementById('cta').scrollIntoView({behavior: 'smooth'})}>Start Your Journey</button>
+                                <button className="btn btn-secondary" onClick={() => document.getElementById('showcase').scrollIntoView({behavior: 'smooth'})}>See Our Work</button>
+                            </div>
+                        </div>
+                        <div className="hero-visual">
+                            <div className="peacock-icon">🦚</div>
+                        </div>
+                    </section>
+
+                    {/* About Section */}
+                    <section className="about">
+                        <div className="container">
+                            <h2>Why Choose Bayeni?</h2>
+                            <div className="about-grid">
+                                <div className="about-item">
+                                    <h3>01</h3>
+                                    <h4>Expert Marketing</h4>
+                                    <p>We understand the challenges small businesses face in the digital marketplace. Our strategies are proven, tested, and results-driven.</p>
+                                </div>
+                                <div className="about-item">
+                                    <h3>02</h3>
+                                    <h4>Custom Solutions</h4>
+                                    <p>Every business is unique. We create tailored e-commerce platforms that reflect your brand and capture your market.</p>
+                                </div>
+                                <div className="about-item">
+                                    <h3>03</h3>
+                                    <h4>Full Support</h4>
+                                    <p>From launch to scale, we're with you every step. Technical support, marketing guidance, and continuous optimization included.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Services Section */}
+                    <section id="services" className="services">
+                        <div className="container">
+                            <h2>Our Services</h2>
+                            <div className="services-grid">
+                                <div className="service-card">
+                                    <div className="service-icon">🛍️</div>
+                                    <h3>E-Commerce Platform Setup</h3>
+                                    <p>Custom website design and development with HTML5, CSS3, and modern JavaScript frameworks tailored to your needs.</p>
+                                </div>
+                                <div className="service-card">
+                                    <div className="service-icon">📱</div>
+                                    <h3>Mobile-First Design</h3>
+                                    <p>Responsive websites that look perfect on all devices. Your customers shop anywhere, anytime.</p>
+                                </div>
+                                <div className="service-card">
+                                    <div className="service-icon">🎨</div>
+                                    <h3>Brand Identity</h3>
+                                    <p>Stunning visual design that captures your brand essence and creates lasting impressions with your audience.</p>
+                                </div>
+                                <div className="service-card">
+                                    <div className="service-icon">📊</div>
+                                    <h3>Analytics & Optimization</h3>
+                                    <p>Data-driven insights to track performance, understand customer behavior, and continuously improve results.</p>
+                                </div>
+                                <div className="service-card">
+                                    <div className="service-icon">🚀</div>
+                                    <h3>Marketing Strategy</h3>
+                                    <p>Comprehensive digital marketing to drive traffic, increase conversions, and grow your revenue.</p>
+                                </div>
+                                <div className="service-card">
+                                    <div className="service-icon">🔒</div>
+                                    <h3>Security & Performance</h3>
+                                    <p>Fast-loading, secure platforms built to handle your growing customer base with confidence.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Showcase Section */}
+                    <section id="showcase" className="showcase">
+                        <div className="container">
+                            <h2>Featured Success Story: EMPYRE</h2>
+                            <div className="showcase-content">
+                                <div className="showcase-image">
+                                    <div className="empyre-card">
+                                        <div className="empyre-header">No Lies. Just EMPYRE.</div>
+                                        <h3>EMPYRE</h3>
+                                        <p className="subtitle">Writer's Portfolio & Digital Presence</p>
+                                    </div>
+                                </div>
+                                <div className="showcase-details">
+                                    <h3>No Lies. Just EMPYRE.</h3>
+                                    <p>We transformed a vision into a sophisticated digital presence for <strong>EMPYRE</strong>, a writer's portfolio and online brand showcase built on authenticity and excellence.</p>
+                                    
+                                    <h4>The Challenge:</h4>
+                                    <ul>
+                                        <li>Create a memorable brand experience for a literary professional</li>
+                                        <li>Showcase work in an elegant, aesthetically-pleasing design</li>
+                                        <li>Build a platform that reflects sophistication and professionalism</li>
+                                    </ul>
+
+                                    <h4>Our Solution:</h4>
+                                    <ul>
+                                        <li>Custom HTML5 & CSS3 design with modern aesthetic</li>
+                                        <li>Smooth JavaScript interactions and animations</li>
+                                        <li>Fully responsive for all devices</li>
+                                        <li>SEO-optimized for search visibility</li>
+                                    </ul>
+
+                                    <h4>Results:</h4>
+                                    <p>A stunning digital portfolio that captivates visitors and establishes EMPYRE as a professional in the literary space.</p>
+
+                                    <a href="https://github.com/uncongwane350-source/empyre-thandeka" className="btn btn-primary" target="_blank" rel="noopener noreferrer">View EMPYRE Repository →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Testimonials Section */}
+                    <section id="testimonials" className="testimonials">
+                        <div className="container">
+                            <h2>What Our Clients Say</h2>
+                            <div className="testimonials-grid">
+                                <div className="testimonial-card">
+                                    <div className="stars">⭐⭐⭐⭐⭐</div>
+                                    <p>"Bayeni transformed our online presence. Professional, creative, and delivered beyond expectations."</p>
+                                    <h4>Sarah Mitchell</h4>
+                                    <p className="client-role">Founder, Digital Boutique</p>
+                                </div>
+                                <div className="testimonial-card">
+                                    <div className="stars">⭐⭐⭐⭐⭐</div>
+                                    <p>"The team understood our brand immediately and created something we're truly proud of. Highly recommended!"</p>
+                                    <h4>James Okonkwo</h4>
+                                    <p className="client-role">CEO, Sustainable Fashion Co.</p>
+                                </div>
+                                <div className="testimonial-card">
+                                    <div className="stars">⭐⭐⭐⭐⭐</div>
+                                    <p>"Not just a website—they built us a complete online business ecosystem. Support is outstanding."</p>
+                                    <h4>Maya Patel</h4>
+                                    <p className="client-role">Founder, Artisan Goods</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Review Section */}
+                    <ReviewSection />
+
+                    {/* Call to Action Section */}
+                    <section id="cta" className="cta">
+                        <div className="container">
+                            <h2>Ready to Grow Your Business?</h2>
+                            <p>Let's create something extraordinary together. Get in touch and discover how Bayeni can transform your e-commerce vision into reality.</p>
+                            <form className="contact-form" onSubmit={(e) => { e.preventDefault(); alert('Message sent! We\'ll be in touch soon.'); e.target.reset(); }}>
+                                <input type="text" placeholder="Your Name" required />
+                                <input type="email" placeholder="Your Email" required />
+                                <input type="text" placeholder="Business Name" required />
+                                <textarea placeholder="Tell us about your project..." rows="5" required></textarea>
+                                <button type="submit" className="btn btn-primary">Schedule a Consultation</button>
+                            </form>
+                        </div>
+                    </section>
+
+                    {/* Footer */}
+                    <footer className="footer">
+                        <div className="container">
+                            <div className="footer-content">
+                                <div className="footer-section">
+                                    <h4>Bayeni</h4>
+                                    <p>Empowering small businesses with professional e-commerce solutions.</p>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Quick Links</h4>
+                                    <ul>
+                                        <li><a href="#services">Services</a></li>
+                                        <li><a href="#showcase">Showcase</a></li>
+                                        <li><a href="#testimonials">Testimonials</a></li>
+                                        <li><a href="#review">Reviews</a></li>
+                                        <li><a href="#cta">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div className="footer-section">
+                                    <h4>Featured Work</h4>
+                                    <ul>
+                                        <li><a href="https://github.com/uncongwane350-source/empyre-thandeka" target="_blank" rel="noopener noreferrer">EMPYRE</a></li>
+                                        <li><a href="https://github.com/uncongwane350-source" target="_blank" rel="noopener noreferrer">More Projects</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div className="footer-bottom">
+                                <p>&copy; 2026 Bayeni. All rights reserved. | Small Business E-Commerce Solutions</p>
+                            </div>
+                        </div>
+                    </footer>
+                </>
+            );
+        }
+
+        ReactDOM.render(<BayeniApp />, document.getElementById('root'));
+    </script>
 </body>
 </html>
