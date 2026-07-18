@@ -248,3 +248,5 @@ Bayeni empowers small businesses with professional e-commerce solutions includin
 **Made with 🦚 and 💚 for small business owners everywhere.**
 
 Built with HTML5, CSS3, and vanilla JavaScript.
+
+DISCLAIMER: THIS IS COMPLETELY AI GENERATED FOR ME TO USE AS REFERENCE AND PERSONAL MOCK UP FOR MY SELF-EDUCATION
